@@ -1,0 +1,74 @@
+[
+    {
+        "name": "user_id",
+        "length": 6040,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 0
+    },
+    {
+        "name": "gender",
+        "length": 2,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 4
+    },
+    {
+        "name": "age",
+        "length": 7,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 5
+    },
+    {
+        "name": "occupation",
+        "length": 21,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 6
+    },
+    {
+        "name": "movie_id",
+        "length": 3706,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 1
+    },
+    {
+        "name": "genres",
+        "length": 19,
+        "type": "MultiSparseEncoder",
+        "size": 6,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 7
+    },
+    {
+        "name": "timestamp",
+        "length": 1,
+        "type": "time",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "time",
+        "index": 3
+    },
+    {
+        "name": "rating",
+        "length": 5,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 2
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+        "name": "101",
+        "length": 238635,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 2
+    },
+    {
+        "name": "121",
+        "length": 98,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 3
+    },
+    {
+        "name": "122",
+        "length": 14,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 4
+    },
+    {
+        "name": "124",
+        "length": 3,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 5
+    },
+    {
+        "name": "125",
+        "length": 8,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 6
+    },
+    {
+        "name": "126",
+        "length": 4,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 7
+    },
+    {
+        "name": "127",
+        "length": 4,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 8
+    },
+    {
+        "name": "128",
+        "length": 3,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 9
+    },
+    {
+        "name": "129",
+        "length": 5,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 10
+    },
+    {
+        "name": "205",
+        "length": 467298,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 11
+    },
+    {
+        "name": "206",
+        "length": 6929,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 12
+    },
+    {
+        "name": "207",
+        "length": 263942,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 13
+    },
+    {
+        "name": "216",
+        "length": 106399,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 14
+    },
+    {
+        "name": "508",
+        "length": 5888,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "joint",
+        "index": 15
+    },
+    {
+        "name": "509",
+        "length": 104830,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "joint",
+        "index": 16
+    },
+    {
+        "name": "702",
+        "length": 51878,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "joint",
+        "index": 17
+    },
+    {
+        "name": "853",
+        "length": 37148,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "joint",
+        "index": 18
+    },
+    {
+        "name": "301",
+        "length": 4,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "joint",
+        "index": 19
+    },
+    {
+        "name": "click",
+        "length": 2,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 0
+    },
+    {
+        "name": "purchase",
+        "length": 2,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 1
+    }
+]

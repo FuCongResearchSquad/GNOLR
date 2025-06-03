@@ -1,0 +1,47 @@
+[
+    {
+        "name": "userId",
+        "length": 138494,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 0
+    },
+    {
+        "name": "movieId",
+        "length": 131263,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 1
+    },
+    {
+        "name": "genres",
+        "length": 21,
+        "type": "MultiSparseEncoder",
+        "size": 10,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 4
+    },
+    {
+        "name": "rating",
+        "length": 2,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 2
+    },
+    {
+        "name": "timestamp",
+        "length": 2,
+        "type": "time",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "time",
+        "index": 3
+    }
+]

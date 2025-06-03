@@ -1,0 +1,42 @@
+[
+    {
+        "name": "visitorid",
+        "length": 1407581,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "user",
+        "index": 0
+    },
+    {
+        "name": "itemid",
+        "length": 235062,
+        "type": "SparseEncoder",
+        "size": 1,
+        "emb_dim": 16,
+        "belongs": "item",
+        "index": 1
+    },
+    {
+        "name": "addtocart",
+        "length": 2,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 2,
+        "mean": 0.0333,
+        "m_value":0.03445
+    },
+    {
+        "name": "transaction",
+        "length": 2,
+        "type": "label",
+        "size": 1,
+        "emb_dim": 0,
+        "belongs": "label",
+        "index": 3,
+        "mean": 0.0081,
+        "m_value": 0.0082
+    }
+]
