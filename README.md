@@ -4,6 +4,10 @@ This repository provides a PyTorch reference implementation of the main models a
 
 > Zhongjin Zhang*, Yu Liang*, Cong Fu, Yuxuan Zhu, Kun Wang, Yabo Ni, Anxiang Zeng and Jiazhi Xia. Embed Progressive Implicit Preference in Unified Space for Deep Collaborative Filtering. KDD 2025.
 
+## News
+
+> 📢 **[2025-06-21]**: We've added clarifications on hyperparameters and formulations based on user feedback. See [Updates & Clarifications](#updates--clarifications) for details.
+
 ## Quick Start
 
 We recommend installing the dependencies using `requirements.txt`. This setup has been tested with Ubuntu 18.04, CUDA 12.1, and Python 3.12.
@@ -60,7 +64,47 @@ If you find this repository helpful, please consider citing our paper:
 @inproceedings{GNOLR,
   author={Zhongjin Zhang, Yu Liang, Cong Fu, Yuxuan Zhu, Kun Wang, Yabo Ni, Anxiang Zeng and Jiazhi Xia.},
   title={Embed Progressive Implicit Preference in Unified Space for Deep Collaborative Filtering},
-  booktitle={{KDD}},
+  booktitle={Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
   year={2025}
 }
 ```
+
+## Updates & Clarifications
+
+We appreciate the questions from users via email and community. Below are clarifications on several points:
+
+---
+
+**Q1: How to handle potential `NaN` issues in `ordinal_multi_tasks_gnolr`?**
+
+**A:** In the `loss.py` file, particularly in the `ordinal_multi_tasks_gnolr` and related OLR loss functions, a `NaN` issue may occur due to computing `torch.log(probs[:, 0] - probs[:, 1])` when the input to `log` becomes zero or negative. Here, `probs` are computed as follows:
+* `probs[:, 0] = sigmoid(logits[:, 0] - a[0])`
+* `probs[:, 1] = sigmoid(logits[:, 0] + logits[:, 1] - a[1])`
+
+To ensure the log input remains positive, we require:
+
+`probs[:,0] > probs[:,1] ⇒ logits[:,0] − a[0] > logits[:,0] + logits[:,1] − a[1] ⇒ logits[:,1] < a[1] − a[0]`
+
+The logits are computed as a scaled cosine similarity between embeddings:
+
+`logits = γ⋅cos(θ), where cos(θ) ∈ [0,1]`
+
+Thus, to satisfy the above condition for all inputs, we require:
+
+`γ < a[1] − a[0]`
+
+In practice, we set the scaling factor γ accordingly based on this constraint to avoid invalid log inputs and ensure numerical stability during training. You can check the specific values we used in the provided shell scripts.
+
+---
+
+**Q2: What are the values of `mi` used in `a_i = torch.tensor([-math.log(mi) for mi in m])`?**
+
+**A:** In the `ordinal_multi_tasks_gnolr` and related loss functions, each `mi` is derived from the following relation:
+
+`m_i / (1 + m_i) = pos_rate ⇒ m_i = pos_rate / (1 - pos_rate)`
+
+where `pos_rate` denotes the expected value `E[P(k > i | x)]`. You can check the specific values we used in the provided shell scripts.
+
+This derivation is consistent with the formula provided in **Section 3.4** of the paper.
+
+---
